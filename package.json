@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start:producer": "tsnd --respawn --rs ./src/producer.ts",
-    "start:consumer": "tsnd --respawn --rs src/consumer.ts"
+    "start-01:producer": "tsnd --respawn --rs ./src/01-basic/producer.ts",
+    "start-01:consumer": "tsnd --respawn --rs src/01-basic/consumer.ts",
+    "start-01": "concurrently \"yarn start-01:producer\"  \"yarn start-01:consumer\""
   },
   "dependencies": {
     "chalk": "^4.1.2",

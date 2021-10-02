@@ -1,5 +1,5 @@
 import chalk from "chalk";
-import { kafka, TOPIC } from "./commons";
+import { kafka, TOPIC } from "./../kafka";
 
 (async () => {
   const consumer = kafka.consumer({ groupId: "test-group" });
@@ -9,9 +9,9 @@ import { kafka, TOPIC } from "./commons";
 
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
-      console.log(chalk.yellow`new message`);
-      console.log(JSON.parse(message.value.toString()));
+      console.log(chalk.green`Consumer:  message received`);
+      
+      console.log(chalk.green(message.value.toString()));
     },
   });
-  
 })();

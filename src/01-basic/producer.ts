@@ -1,4 +1,4 @@
-import { kafka, TOPIC } from "./commons";
+import { kafka, TOPIC } from "./../kafka";
 import faker from "faker";
 import chalk from "chalk";
 
@@ -19,7 +19,7 @@ import chalk from "chalk";
       },
     ],
   });
-  console.log(chalk.yellow`Message sent successfully`);
+  console.log(chalk.yellow`Producer: message sent successfully`);
 
   await producer.disconnect();
 })();
