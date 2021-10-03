@@ -11,7 +11,7 @@ const produceMessage = async (index:number) => {
   const message = JSON.stringify(generateRandomMessage(), null, 2);
 
   await producer.send({
-    topic: "02-load-testing",
+    topic: TOPIC,
     messages: [
       {
         value: message,
