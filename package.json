@@ -8,7 +8,8 @@
     "start-01:consumer": "tsnd --respawn --rs src/01-basic/consumer.ts",
     "start-01": "concurrently \"yarn start-01:producer\"  \"yarn start-01:consumer\"",
     "start-02": "tsnd --respawn --rs src/02-load-testing-topic/index.ts",
-    "start-03": "tsnd --respawn --rs src/03-transaction/index.ts"
+    "start-03": "tsnd --respawn --rs src/03-transaction/index.ts",
+    "start-05": "tsnd --respawn --rs src/05-admin/index.ts"
   },
   "dependencies": {
     "@types/node": "^16.10.2",
