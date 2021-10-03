@@ -1,5 +1,9 @@
-import chalk from "chalk";
-import { kafka, TOPIC } from "./../kafka";
+import chalk from 'chalk';
+import path from 'path';
+
+import { kafka } from './../kafka';
+
+const TOPIC = path.parse(__dirname).base;
 
 (async () => {
   const consumer = kafka.consumer({ groupId: "test-group" });
@@ -10,7 +14,7 @@ import { kafka, TOPIC } from "./../kafka";
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
       console.log(chalk.green`Consumer:  message received`);
-      
+
       console.log(chalk.green(message.value.toString()));
     },
   });

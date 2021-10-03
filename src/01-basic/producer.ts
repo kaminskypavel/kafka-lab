@@ -1,6 +1,10 @@
-import { kafka, TOPIC } from "./../kafka";
-import faker from "faker";
-import chalk from "chalk";
+import chalk from 'chalk';
+import faker from 'faker';
+import path from 'path';
+
+import { kafka } from './../kafka';
+
+const TOPIC = path.parse(__dirname).base;
 
 (async () => {
   const producer = kafka.producer();
